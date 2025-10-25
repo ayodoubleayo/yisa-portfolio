@@ -1,6 +1,6 @@
 // app/home/page.tsx
-import HomePage from '../page';
+import { redirect } from 'next/navigation';
 
 export default function HomeRedirect() {
-  return <HomePage />;
+  redirect('/');
 }
