@@ -18,6 +18,13 @@ export default function Navbar() {
     "Resume"
   ];
 
+  // Always point Resume to the intermediate PDF
+  const getHref = (link: string) => {
+    if (link === "Home") return "/";
+    if (link === "Resume") return "/resume-intermediate.pdf";
+    return `/${link.toLowerCase()}`;
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
@@ -37,13 +44,7 @@ export default function Navbar() {
             {links.map((l) => (
               <Link
                 key={l}
-                href={
-                  l === "Home"
-                    ? "/"
-                    : l === "Resume"
-                    ? "/resume.pdf"
-                    : `/${l.toLowerCase()}`
-                }
+                href={getHref(l)}
                 target={l === "Resume" ? "_blank" : "_self"}
                 className="text-sm font-medium text-gray-900 dark:text-gray-100 hover:text-orange-600 transition-colors"
               >
@@ -90,20 +91,17 @@ export default function Navbar() {
       </div>
 
       {/* Mobile dropdown */}
-     <div
-  className={`md:hidden transition-all duration-300 ${
-    open ? "max-h-[calc(100vh-4rem)] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-  }`}
->
-
+      <div
+        className={`md:hidden transition-all duration-300 ${
+          open ? "max-h-[calc(100vh-4rem)] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        }`}
+      >
         <div className="flex flex-col space-y-2 px-6 py-4 bg-white dark:bg-gray-900 border-t dark:border-gray-800">
           {links.map((l) => (
             <Link
               key={l}
-             // Update the "Resume" link in Navbar
-href={l === "Resume" ? "/resume-intermediate.pdf" : `/${l.toLowerCase()}`}
-target={l === "Resume" ? "_blank" : "_self"}
-
+              href={getHref(l)}
+              target={l === "Resume" ? "_blank" : "_self"}
               onClick={() => setOpen(false)}
               className="text-gray-900 dark:text-gray-100 hover:text-orange-500 transition"
             >
