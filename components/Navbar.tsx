@@ -90,11 +90,12 @@ export default function Navbar() {
       </div>
 
       {/* Mobile dropdown */}
-      <div
-        className={`md:hidden transition-all duration-300 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-        }`}
-      >
+     <div
+  className={`md:hidden transition-all duration-300 ${
+    open ? "max-h-[calc(100vh-4rem)] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+  }`}
+>
+
         <div className="flex flex-col space-y-2 px-6 py-4 bg-white dark:bg-gray-900 border-t dark:border-gray-800">
           {links.map((l) => (
             <Link

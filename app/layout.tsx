@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
 
             {/* Main Content */}
-            <main className="pt-24">{children}</main>
+<main className="pt-20 md:pt-24">{children}</main>
 
             {/* Footer */}
             <Footer />

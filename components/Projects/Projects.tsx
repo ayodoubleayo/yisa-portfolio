@@ -3,28 +3,29 @@
 import Image from "next/image";
 
 export default function Projects() {
-  const projectList = [
-    {
-      name: "Admin Dashboard",
-      desc: "A full-featured admin panel built with Next.js & Tailwind CSS.",
-      img: "/images/Screenshot 2025-10-25 050652.png",
-    },
-    {
-      name: "BNPL App",
-      desc: "A Buy Now Pay Later app with React and responsive design.",
-      img: "/images/bnpl-app.png",
-    },
-    {
-      name: "Job Board",
-      desc: "A job listing platform featuring search and filtering capabilities.",
-      img: "/images/job-board.png",
-    },
-    {
-      name: "Microsoft Clone",
-      desc: "A pixel-perfect recreation of Microsoft's homepage using Next.js and Tailwind CSS.",
-      img: "/images/Screenshot 2025-10-25 063103.png",
-    },
-  ];
+ const projectList = [
+  {
+    name: "Admin Dashboard",
+    desc: "A full-featured admin panel built with Next.js & Tailwind CSS.",
+    img: "/images/Screenshot-2025-10-25-050652.png",
+  },
+  {
+    name: "BNPL App",
+    desc: "A Buy Now Pay Later app with React and responsive design.",
+    img: "/images/bnpl-app.png",
+  },
+  {
+    name: "Job Board",
+    desc: "A job listing platform featuring search and filtering capabilities.",
+    img: "/images/job-board.png",
+  },
+  {
+    name: "Microsoft Clone",
+    desc: "A pixel-perfect recreation of Microsoft's homepage using Next.js and Tailwind CSS.",
+    img: "/images/Screenshot-2025-10-25-063103.png",
+  },
+];
+
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 px-4 py-12">
@@ -38,7 +39,7 @@ export default function Projects() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         {projectList.map((project) => (
           <div
             key={project.name}
